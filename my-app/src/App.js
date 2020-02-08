@@ -4,6 +4,7 @@ import './App.css';
 import HeaderApp from './components/HeaderApp.js';
 import PhotoThumb from './components/PhotoThumb';
 import PhotoBrowser from './components/PhotoBrowser';
+import * as cloneDeep from 'lodash/cloneDeep';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +12,16 @@ class App extends React.Component {
     this.state = {
       photos: []
     }
+  }
+
+  updatePhoto = (id, photo) => {
+    const copyPhotos = cloneDeep(this.state.photos);
+    const photoToReplace = copyPhotos.find(p => p.id === id);
+
+    photoToReplace.title = photo.title;
+    photoToReplace.location.city = photo.location.city;
+    photoToReplace.location.country = photo.location.country;
+    this.setState({photos: copyPhotos})
   }
 
   async componentDidMount() {
@@ -28,7 +39,8 @@ class App extends React.Component {
     return (
       <main>
         <HeaderApp />
-        <PhotoBrowser photos={this.state.photos} />
+        <PhotoBrowser photos={this.state.photos} 
+        updatePhoto={this.updatePhoto}/>
 
       </main>
     );

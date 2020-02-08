@@ -6,7 +6,7 @@ class PhotoThumb extends React.Component {
     }
 
     render() {
-        const imgURL = `https://storage.googleapis.com/funwebdev-3rd-travel/square-medium/${this.props.photo.filename}`;
+        const imgURL = `https://storage.googleapis.com/funwebdev-3rd-travel/medium640/${this.props.photo.filename.toLowerCase()}`;
         return (
             <div className="photoBox" onClick={this.handleViewClick}>
                 <figure>

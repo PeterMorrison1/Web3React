@@ -4,7 +4,7 @@ import EditPhotoDetails from './EditPhotoDetails.js';
 class PhotoBrowser extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {currentPhoto: 1};
+        this.state = { currentPhoto: 1 };
     }
 
     showImageDetails = (id) => {
@@ -14,8 +14,11 @@ class PhotoBrowser extends React.Component {
     render() {
         return (
             <section className="container">
-                <PhotoList photos={this.props.photos}/>
-                <EditPhotoDetails photos={this.props.photos} currentPhoto={this.state.currentPhoto} showImageDetails={this.showImageDetails}/>
+                <PhotoList photos={this.props.photos} showImageDetails={this.showImageDetails} />
+                <EditPhotoDetails photos={this.props.photos}
+                    currentPhoto={this.state.currentPhoto}
+                    updatePhoto={this.props.updatePhoto}
+                    />
             </section>
         );
     }
