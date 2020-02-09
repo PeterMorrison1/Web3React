@@ -161,6 +161,11 @@ legend {
   text-transform: uppercase;
 }
 
+img.favoriteItem {
+  width: 100px;
+  height: 100px;
+}
+
 
 .banner {
   color: white;

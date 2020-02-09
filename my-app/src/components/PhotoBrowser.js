@@ -14,7 +14,7 @@ class PhotoBrowser extends React.Component {
     render() {
         return (
             <section className="container">
-                <PhotoList photos={this.props.photos} showImageDetails={this.showImageDetails} />
+                <PhotoList photos={this.props.photos} showImageDetails={this.showImageDetails} addFav={this.props.addFav}/>
                 <EditPhotoDetails photos={this.props.photos}
                     currentPhoto={this.state.currentPhoto}
                     updatePhoto={this.props.updatePhoto}

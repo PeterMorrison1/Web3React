@@ -1,2 +1,18 @@
-import React from 'react'; const HeaderMenu = function (props) { return (<nav>           <button>About</button>           <button>Upload</button>           <button>Download</button>       </nav>); } 
+import React from 'react';
+import { Link } from 'react-router-dom';
+const HeaderMenu = function (props) {
+    return (
+        <nav>
+            <Link to='/home'>
+                <button>Home</button>
+            </Link>
+            <Link to='/browse'>
+                <button>Browse</button>
+            </Link>
+            <Link to='/about'>
+                <button>About</button>
+            </Link>
+        </nav>
+    );
+}
 export default HeaderMenu;
